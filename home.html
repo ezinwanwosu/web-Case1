@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Billz2Grillz</title>
+        <link rel="stylesheet" href = "home.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <!-- header is the name of company includes cart and menu-->
+        <!-- Navebar-->
+         <nav class="navbar">
+            <div class="navbar_container">
+                <div class="navbar_side"></div>
+
+                <!-- Center logo -->
+                <a href="/home.html" id="navbar_logo">BILLZ2GRILLZ</a>
+          
+                <!-- Right menu -->
+                <ul class="navbar_menu">
+                  <li class="navbar_item">
+                    <a href="home.html" class="navbar_links">HOME</a>
+                  </li>
+                  <li class="navbar_item">
+                    <a href="products.html" class="navbar_links">PRODUCTS</a>
+                  </li>
+                  <li class="navbar_item">
+                    <a href="cart.html" class="navbar_links">
+                      <i class="fas fa-shopping-cart"></i> <!-- Cart Icon -->
+                    </a>
+                  </li>
+                </ul>
+            </div>
+        </nav>
+        
+
+        
+        <!--start with a big picture of different clients-->
+         <div class = "slideshow">
+            <img id="slide" src="" alt="SlideShow Image">
+            <a href = "buyNowButton" class="buyButton">Buy Now</a>
+         </div>
+        <!-- big picture has a link to shop now-->
+
+        <!-- instagram is sticky on the page-->
+        <a href="https://www.instagram.com/billz2grillz" target="_blank" class="instagram-icon" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+         </div>
+        <!--Short bio underneath big picture-->
+        <section class="bio_section">
+            <div class="bio_container">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat ultrices semper. Ut ac massa a neque lobortis pellentesque. Nullam malesuada neque at ipsum dapibus egestas. Aliquam laoreet gravida commodo. Aliquam ut sodales est. Curabitur sed laoreet sapien, non rutrum libero. Donec diam est, tincidunt sed semper at, convallis vel nibh. Duis rhoncus magna bibendum augue interdum facilisis et porta odio.
+              </p>
+            </div>
+          </section>
+        <div class="aboutUs">
+          <img id="about_img" src="image.png" alt="Abou US Image">
+          <h1> BILLZ2GRILLZ</h1>
+          <div class="about_text">
+            <h2>About Us</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat ultrices semper. Ut ac massa a neque lobortis pellentesque.</p>
+          </div>
+        </div>
+        <!--different items/categories underneath bio-->
+        <div class="services">
+          <h1>Products</h1>
+          <div class="seervices_container">
+            <div class="services_card">
+              <h2>Grillz</h2>
+            </div>
+            <div class="services_card">
+              <h2>tooth caps</h2>
+            </div>
+          </div>
+        </div>
+        <!--featured collection/ sales/ deals-->
+        <!-- customer reviews underneath-->
+        <div class = testimonies>
+          <p id="testimony"></p>
+        </div>
+         <!--footer: contact info, policies, terms of service, socials-->
+    
+
+    <script>
+        const images = ['img1.png','img2.png','img3.png','img5.png','img6.png'];
+        let current = 0;
+        const testimonies = ['xxxxxx - ABC DEF','yyyyyyy - GHI JKL','zzzzzz- MNO PQR'];
+        const testimony = document.getElementById('testimony');
+        const slide = document.getElementById('slide');
+        let currentT = 0
+
+        function showSlide(){
+          slide.classList.remove('visible');
+          setTimeout(() => {
+            slide.src = images[current];
+            slide.classList.add('visible');
+            current = (current + 1) % images.length;
+          }, 300);
+            
+        }
+
+        function showTest(){
+          testimony.textContent = testimonies[currentT];
+          currentT = (currentT + 1) % testimonies.length;
+        }
+        showSlide();
+        setInterval(showSlide,4000);
+        showTest();
+        setInterval(showTest,2000);
+    </script>
+
+    </body>
+</html>
